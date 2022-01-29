@@ -26,11 +26,11 @@ dependencies:
   webview_flutter:
   local_auth:
   starflut:
-  excel: ^1.1.5
+  #excel: ^1.1.5
   dio:
   permission_handler: ^5.1.0+2
   ext_storage:
-  charts_flutter: ^0.10.0
+  #charts_flutter: ^0.10.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -44,9 +44,9 @@ dev_dependencies:
     sdk: flutter
 
   flutter_bloc:
-  sqflite:
+  #sqflite:
   shared_preferences:
-  android_alarm_manager:
+  #android_alarm_manager:
   intl:
   flutter_local_notifications:
   build_runner:

@@ -35,7 +35,8 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.starsearch_iot"
-        minSdkVersion 16
+        minSdkVersion 21
+        // Android 5.0 Lollipop and higher required: Limitations of Android WebKit
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
