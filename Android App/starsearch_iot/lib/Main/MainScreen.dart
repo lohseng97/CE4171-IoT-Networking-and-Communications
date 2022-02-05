@@ -3,10 +3,9 @@
 
 import 'package:flutter/material.dart';
 
-import './drawer.dart';
+import 'Drawer.dart';
 import './TabScreen.dart';
 import './NavigationManager.dart';
-
 
 class MainScreenMenu extends StatelessWidget {
   static const routeName = '/root';
@@ -27,7 +26,7 @@ class MainScreenMenu extends StatelessWidget {
           ),
         ),
         drawer: MainDrawer(),
-        bottomNavigationBar: TabScreen(1),
+        //bottomNavigationBar: TabScreen(1),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(25.0),
@@ -79,7 +78,7 @@ class MainScreenMenu extends StatelessWidget {
                   child: Container(
                       padding: const EdgeInsets.all(25),
                       child: Text(
-                        'Visit Us!',
+                        'DB Update',
                         style: Theme.of(context).textTheme.headline6,
                       ),
                       decoration: BoxDecoration(

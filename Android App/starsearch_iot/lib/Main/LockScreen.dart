@@ -7,10 +7,11 @@ import 'package:local_auth/local_auth.dart';
 import 'package:local_auth/error_codes.dart' as auth_error;
 
 import './MainScreen.dart';
+import './NavigationManager.dart';
 
 class LockScreen extends StatelessWidget {
-  //static const routeName = '/lockscreen';
-  static const routeName = '/root';
+  static const routeName = '/lockscreen';
+  //static const routeName = '/root';
   final LocalAuthentication localAuth = LocalAuthentication();
 
   @override
@@ -28,8 +29,7 @@ class LockScreen extends StatelessWidget {
                     localizedReason:
                         "Authenticate to see your medical history");
                 if (authenticated) {
-                  Navigator.pushReplacementNamed(
-                      context, MainScreenMenu.routeName);
+                  NavigationManager.mainMenuIndex(context, 1);
                 }
               }
             } on PlatformException catch (e) {

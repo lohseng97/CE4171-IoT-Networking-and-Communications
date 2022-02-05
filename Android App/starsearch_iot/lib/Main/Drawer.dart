@@ -13,9 +13,9 @@ class MainDrawer extends StatelessWidget {
             width: double.infinity,
             padding: EdgeInsets.all(25),
             alignment: Alignment.centerLeft,
-            color: Colors.orange,
+            color: Colors.greenAccent,
             child: Text(
-              'Welcome to Health Zone!',
+              'Welcome to StarSearch!',
               style: TextStyle(
                   fontWeight: FontWeight.w900,
                   fontSize: 25,
@@ -24,22 +24,23 @@ class MainDrawer extends StatelessWidget {
           ),
           SizedBox(height: 20),
           ListTile(
-              leading: Icon(Icons.home, color: Colors.orange, size: 25),
-              title: Text(
-                'Home Page',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'RobotoCondensed',
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold),
-              ),
-              onTap: () {
-                NavigationManager.drawerPageIndex(context, 1);
-              }),
-          ListTile(
-            leading: Icon(Icons.medical_services, color: Colors.cyan, size: 22),
+            leading: Icon(Icons.home_filled, color: Colors.white54, size: 22),
             title: Text(
-              'Medical Services',
+              'Home Page',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontFamily: 'RobotoCondensed',
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold),
+            ),
+            onTap: () {
+              NavigationManager.drawerPageIndex(context, 1);
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.image_search, color: Colors.cyan, size: 22),
+            title: Text(
+              'Local ML',
               style: TextStyle(
                   color: Colors.white,
                   fontFamily: 'RobotoCondensed',
@@ -51,9 +52,9 @@ class MainDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.local_hospital, color: Colors.white, size: 22),
+            leading: Icon(Icons.settings_remote, color: Colors.white, size: 22),
             title: Text(
-              'CHAS Clinics',
+              'Remote ML',
               style: TextStyle(
                   color: Colors.white,
                   fontFamily: 'RobotoCondensed',
@@ -67,12 +68,12 @@ class MainDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.warning, color: Colors.red, size: 22),
             title: Text(
-              'Health Hazards',
+              'Admin Portal',
               style: TextStyle(
-                  color: Colors.white,
-                  fontFamily: 'RobotoCondensed',
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold),
+                color: Colors.white,
+                fontFamily: 'RobotoCondensed',
+                fontSize: 16,
+              ),
             ),
             onTap: () {
               NavigationManager.drawerPageIndex(context, 4);

@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import './NavigationManager.dart';
 
-
-
 // ignore: must_be_immutable
 class TabScreen extends StatelessWidget {
   TabScreen(int curPage) {
     this.curPage = curPage - 1;
   }
 
-  late BuildContext context1;
-  late int curPage;
+  BuildContext context1;
+  int curPage;
 
   void _curPage(int index) {
     index++;
@@ -37,22 +35,22 @@ class TabScreen extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           backgroundColor: Colors.amber,
-          icon: Icon(Icons.medical_services),
-          label: 'Reminders',
+          icon: Icon(Icons.image_search),
+          label: 'Local ML',
           //activeIcon: Icon(Icons.sim_card),
         ),
         BottomNavigationBarItem(
           backgroundColor: Colors.green,
-          icon: Icon(Icons.local_hospital),
-          label: 'Clinics',
+          icon: Icon(Icons.settings_remote),
+          label: 'Remote ML',
         ),
         BottomNavigationBarItem(
           backgroundColor: Colors.red,
           icon: Icon(Icons.warning),
-          label: 'Hazards',
+          label: 'Admin Access',
         ),
         BottomNavigationBarItem(
-          backgroundColor: Colors.red,
+          //backgroundColor: Colors.red,
           icon: Icon(Icons.exit_to_app_sharp),
           label: 'Exit',
         ),
