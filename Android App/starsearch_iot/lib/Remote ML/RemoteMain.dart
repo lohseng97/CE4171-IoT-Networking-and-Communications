@@ -10,7 +10,6 @@ import 'package:starsearch_iot/CommonML/PredictionResult.dart';
 import '../Main/NavigationManager.dart';
 import '../Main/Drawer.dart';
 import '../Main/TabScreen.dart';
-import '../CommonML/ResultBox.dart';
 
 class RemoteML extends StatefulWidget {
   static const routeName = '/RemoteML';
@@ -79,7 +78,8 @@ class _RemoteML extends State<RemoteML> {
     } else {
       var errorCode = res.statusCode;
       var errorText = res.body;
-      ResultBox.noConnectionError(context, errorCode, errorText);
+      print(errorCode);
+      print(errorText);
       throw Exception('Failed to Load Prediction!');
     }
   }
