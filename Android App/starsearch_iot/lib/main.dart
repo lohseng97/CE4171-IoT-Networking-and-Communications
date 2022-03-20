@@ -2,12 +2,10 @@
 
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import '../Local ML/LocalMain.dart';
 import '../Remote ML/RemoteMain.dart';
 import '../DB Update/AdminSite.dart';
 
 import './Main/MainScreen.dart';
-import './Main/LockScreen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -41,10 +39,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/root',
       routes: {
         MainScreenMenu.routeName: (context) => MainScreenMenu(),
-        LockScreen.routeName: (context) => LockScreen(),
         DBUpdate.routeName: (context) => DBUpdate(),
         RemoteML.routeName: (context) => RemoteML(),
-        LocalML.routeName: (context) => LocalML(),
       },
     );
   }

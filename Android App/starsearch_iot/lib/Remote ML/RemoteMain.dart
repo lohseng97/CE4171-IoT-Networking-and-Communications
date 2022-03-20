@@ -6,10 +6,11 @@ import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
 import 'package:path/path.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:starsearch_iot/CommonML/PredictionResult.dart';
 import '../Main/NavigationManager.dart';
 import '../Main/Drawer.dart';
 import '../Main/TabScreen.dart';
-import 'RemotePrediction.dart';
+import '../CommonML/ResultBox.dart';
 
 class RemoteML extends StatefulWidget {
   static const routeName = '/RemoteML';
@@ -19,60 +20,67 @@ class RemoteML extends StatefulWidget {
 
 class _RemoteML extends State<RemoteML> {
   File image;
-  final picker = ImagePicker();
-  Future<RemotePrediction> futurePrediction;
-
+  Future<RemotePrediction> prediction;
   BuildContext context;
 
+  @override
+  void initState() {
+    super.initState();
+  }
+
   Future getImageFromGallery() async {
-    final selectedFile = await picker.getImage(source: ImageSource.gallery);
+    final selectedFile =
+        await ImagePicker.pickImage(source: ImageSource.gallery);
     setState(() {
       if (selectedFile != null) {
         image = File(selectedFile.path);
       } else {
-        NavigationManager.remoteImageError(context);
+        NavigationManager.noImgError(context);
       }
     });
   }
 
   Future getImageFromCamera() async {
-    final selectedFile = await picker.getImage(source: ImageSource.camera);
+    final selectedFile =
+        await ImagePicker.pickImage(source: ImageSource.camera);
     setState(() {
       if (selectedFile != null) {
         image = File(selectedFile.path);
       } else {
-        NavigationManager.remoteImageError(context);
+        NavigationManager.noImgError(context);
       }
     });
   }
 
-  //To modify
-  Future<RemotePrediction> uploadImageToServer(File imageFile) async {
-    print("Connecting to server......");
-    var stream =
-        new http.ByteStream(DelegatingStream.typed(imageFile.openRead()));
-    var length = await imageFile.length();
+  Future<RemotePrediction> remoteML(File selectedImage) async {
+    var url = Uri.parse('http://starsearch.lohseng.tech:5000/upload');
 
-    // var uri = Uri.parse('http://20.198.224.77:80/predict');
-    var uri = Uri.parse('http://127.0.0.1/predict');
-    //if it is android simulator change to 10.0.2.2
-    print("Connection Established.");
-    var request = new http.MultipartRequest("POST", uri);
-    print(uri.port);
-    var multipartFile = new http.MultipartFile('file', stream, length,
-        filename: basename(imageFile.path));
+    final request = http.MultipartRequest("POST", url);
+    final headers = {"Content-type": "multipath/form-data"};
 
-    request.files.add(multipartFile);
-    var streamedResponse = await request.send();
-    var response = await http.Response.fromStream(streamedResponse);
-    if (response.statusCode == 201 || response.statusCode == 200) {
-      // If the server did return a 201 CREATED response,
-      // then parse the JSON.
-      print("Post request responded");
-      print(jsonDecode(response.body));
-      return RemotePrediction.fromJson(jsonDecode(response.body));
+    request.files.add(
+      http.MultipartFile('image', selectedImage.readAsBytes().asStream(),
+          selectedImage.lengthSync(),
+          filename: selectedImage.path.split('/').last),
+    );
+
+    request.headers.addAll(headers);
+    print("Request: " + request.toString());
+
+    var response = await request.send();
+    var res = await http.Response.fromStream(response);
+
+    print('Response status: ${res.statusCode}');
+    if (res.statusCode == 201 || res.statusCode == 200) {
+      print("POST OK");
+      print(jsonDecode(res.body));
+      var jsonData = jsonDecode(res.body);
+      return RemotePrediction.fromJson(jsonData);
     } else {
-      throw Exception('Failed to load prediction');
+      var errorCode = res.statusCode;
+      var errorText = res.body;
+      ResultBox.noConnectionError(context, errorCode, errorText);
+      throw Exception('Failed to Load Prediction!');
     }
   }
 
@@ -83,7 +91,7 @@ class _RemoteML extends State<RemoteML> {
           title: Text("Upload Image"),
         ),
         drawer: MainDrawer(),
-        bottomNavigationBar: TabScreen(3),
+        bottomNavigationBar: TabScreen(2),
         resizeToAvoidBottomInset: false,
         body: SingleChildScrollView(
             child: Padding(
@@ -156,10 +164,9 @@ class _RemoteML extends State<RemoteML> {
                       InkWell(
                         onTap: () async {
                           if (image != null) {
-                            futurePrediction = uploadImageToServer(image);
-                            CircularProgressIndicator();
+                            remoteML(image);
                           } else {
-                            NavigationManager.remoteImageError(context);
+                            NavigationManager.noImgError(context);
                           }
                         },
                         splashColor: Theme.of(context).primaryColor,
@@ -183,91 +190,106 @@ class _RemoteML extends State<RemoteML> {
                           ),
                         ),
                       ),
-
                       Padding(padding: EdgeInsets.all(30.0)),
-                      //To modify
-                      if (futurePrediction != null)
-                        FutureBuilder<RemotePrediction>(
-                          future: futurePrediction,
-                          builder: (context, snapshot) {
-                            if (snapshot.hasData) {
-                              String prediction = snapshot.data.predictedClass;
-                              String score = snapshot.data.score;
-                              String title = snapshot.data.title;
-                              String time = snapshot.data.timeStamp;
-                              return Container(
-                                  padding: const EdgeInsets.all(25),
-                                  child: Text(
-                                    'The model is $score confident that the image $title, sent at $time is $prediction',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontFamily: 'RobotoCondensed',
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.bold),
+                      FutureBuilder(
+                        future: remoteML(image),
+                        builder: (context, snapshot) {
+                          if (snapshot.data == null) {
+                            return Container(
+                              padding: const EdgeInsets.all(25),
+                              child: Text(
+                                "Upload Image for prediction of image",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: 'RobotoCondensed',
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  colors: [
+                                    Colors.pink.withOpacity(0.8),
+                                    Colors.pinkAccent,
+                                  ],
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                ),
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                            );
+                          } else if (snapshot.hasData) {
+                            String filename = snapshot.data.filename;
+                            String predictor = snapshot.data.classname;
+                            String accuracy = snapshot.data.accuracy;
+                            String time = snapshot.data.timeStamp;
+                            return Container(
+                                padding: const EdgeInsets.all(25),
+                                child: Text(
+                                  'Predicted Class: $predictor \nAccuracy: $accuracy \nTime uploaded: $time \nFilename: $filename',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: 'RobotoCondensed',
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.bold,
                                   ),
-                                  decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      colors: [
-                                        Colors.deepPurple.withOpacity(0.8),
-                                        Colors.deepPurpleAccent,
-                                      ],
-                                      begin: Alignment.topLeft,
-                                      end: Alignment.bottomRight,
-                                    ),
-                                    borderRadius: BorderRadius.circular(15),
-                                  ));
-                            } else if (snapshot.hasError) {
-                              return Container(
-                                  padding: const EdgeInsets.all(25),
-                                  child: Text(
-                                    '${snapshot.error}',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontFamily: 'RobotoCondensed',
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.bold),
+                                ),
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      Colors.deepPurple.withOpacity(0.8),
+                                      Colors.deepPurpleAccent,
+                                    ],
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
                                   ),
-                                  decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      colors: [
-                                        Colors.deepPurple.withOpacity(0.8),
-                                        Colors.deepPurpleAccent,
-                                      ],
-                                      begin: Alignment.topLeft,
-                                      end: Alignment.bottomRight,
-                                    ),
-                                    borderRadius: BorderRadius.circular(15),
-                                  ));
-                            }
-                            return CircularProgressIndicator();
-                          },
-                        )
-                      else
-                        Container(
-                          padding: const EdgeInsets.all(25),
-                          child: Text(
-                            'Upload image to get prediction of the health of the leave',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: 'RobotoCondensed',
-                                fontSize: 22,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [
-                                Colors.pink.withOpacity(0.8),
-                                Colors.pinkAccent,
-                              ],
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                            ),
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                        ),
+                                  borderRadius: BorderRadius.circular(15),
+                                ));
+                          } else {
+                            return Container(
+                                padding: const EdgeInsets.all(25),
+                                child: Text(
+                                  '${snapshot.error}',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontFamily: 'RobotoCondensed',
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      Colors.deepPurple.withOpacity(0.8),
+                                      Colors.deepPurpleAccent,
+                                    ],
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
+                                  ),
+                                  borderRadius: BorderRadius.circular(15),
+                                ));
+                          }
+                        },
+                      )
                     ]))));
+  }
+}
+
+class RemotePrediction {
+  final String classname;
+  final String accuracy;
+  final String timeStamp;
+  final String filename;
+
+  RemotePrediction(
+      {this.filename, this.classname, this.accuracy, this.timeStamp});
+
+  factory RemotePrediction.fromJson(Map<String, dynamic> json) {
+    return RemotePrediction(
+      filename: json['filename'],
+      classname: json['classname'],
+      accuracy: json['accuracy'],
+      timeStamp: json['uploadtime'],
+    );
   }
 }

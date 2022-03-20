@@ -34,12 +34,6 @@ class TabScreen extends StatelessWidget {
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          backgroundColor: Colors.amber,
-          icon: Icon(Icons.image_search),
-          label: 'Local ML',
-          //activeIcon: Icon(Icons.sim_card),
-        ),
-        BottomNavigationBarItem(
           backgroundColor: Colors.green,
           icon: Icon(Icons.settings_remote),
           label: 'Remote ML',

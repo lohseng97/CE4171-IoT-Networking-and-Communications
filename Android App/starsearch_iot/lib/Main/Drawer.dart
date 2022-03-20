@@ -38,20 +38,6 @@ class MainDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.image_search, color: Colors.cyan, size: 22),
-            title: Text(
-              'Local ML',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontFamily: 'RobotoCondensed',
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold),
-            ),
-            onTap: () {
-              NavigationManager.drawerPageIndex(context, 2);
-            },
-          ),
-          ListTile(
             leading: Icon(Icons.settings_remote, color: Colors.white, size: 22),
             title: Text(
               'Remote ML',
@@ -62,7 +48,7 @@ class MainDrawer extends StatelessWidget {
                   fontWeight: FontWeight.bold),
             ),
             onTap: () {
-              NavigationManager.drawerPageIndex(context, 3);
+              NavigationManager.drawerPageIndex(context, 2);
             },
           ),
           ListTile(
@@ -76,7 +62,7 @@ class MainDrawer extends StatelessWidget {
               ),
             ),
             onTap: () {
-              NavigationManager.drawerPageIndex(context, 4);
+              NavigationManager.drawerPageIndex(context, 3);
             },
           ),
           ListTile(
@@ -91,7 +77,7 @@ class MainDrawer extends StatelessWidget {
               ),
             ),
             onTap: () {
-              NavigationManager.drawerPageIndex(context, 5);
+              NavigationManager.drawerPageIndex(context, 4);
             },
           ),
           ListTile(
@@ -105,7 +91,7 @@ class MainDrawer extends StatelessWidget {
                     fontSize: 16),
               ),
               onTap: () {
-                NavigationManager.drawerPageIndex(context, 6);
+                NavigationManager.drawerPageIndex(context, 5);
               }),
         ],
       ),

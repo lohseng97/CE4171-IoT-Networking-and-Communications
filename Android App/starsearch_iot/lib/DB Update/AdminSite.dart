@@ -5,14 +5,14 @@ import '../../WebKit/DBWebKit.dart';
 
 class DBUpdate extends StatelessWidget {
   static const routeName = '/siteupdate';
-  final link = 'https://www.tpgmobile.sg';
+  final link = 'http://starsearch.lohseng.tech:5000';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: Text('Database Update')),
         drawer: MainDrawer(),
-        bottomNavigationBar: TabScreen(4),
+        bottomNavigationBar: TabScreen(3),
         resizeToAvoidBottomInset: false,
         body: SingleChildScrollView(
             child: Padding(

@@ -26,7 +26,7 @@ class _WebViewContainerState extends State<WebViewContainer> {
           title: Text('Admin Site - WebKit'),
         ),
         drawer: MainDrawer(),
-        bottomNavigationBar: TabScreen(4),
+        bottomNavigationBar: TabScreen(3),
         resizeToAvoidBottomInset: false,
         body: Column(
           children: [

@@ -9,7 +9,6 @@ import './NavigationManager.dart';
 
 class MainScreenMenu extends StatelessWidget {
   static const routeName = '/root';
-  //static const routeName = '/main';
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +25,7 @@ class MainScreenMenu extends StatelessWidget {
           ),
         ),
         drawer: MainDrawer(),
-        //bottomNavigationBar: TabScreen(1),
+        bottomNavigationBar: TabScreen(1),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(25.0),
@@ -36,24 +35,6 @@ class MainScreenMenu extends StatelessWidget {
                 InkWell(
                   onTap: () {
                     NavigationManager.mainMenuIndex(context, 2);
-                  },
-                  splashColor: Theme.of(context).primaryColor,
-                  borderRadius: BorderRadius.circular(15),
-                  child: Container(
-                      padding: const EdgeInsets.all(25),
-                      child: Text(
-                        'Local Machine Learning',
-                        style: Theme.of(context).textTheme.headline6,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.yellow,
-                        borderRadius: BorderRadius.circular(15),
-                      )),
-                ),
-                Padding(padding: EdgeInsets.all(5.0)),
-                InkWell(
-                  onTap: () {
-                    NavigationManager.mainMenuIndex(context, 3);
                   },
                   splashColor: Theme.of(context).primaryColor,
                   borderRadius: BorderRadius.circular(15),
@@ -71,14 +52,14 @@ class MainScreenMenu extends StatelessWidget {
                 Padding(padding: EdgeInsets.all(5.0)),
                 InkWell(
                   onTap: () {
-                    NavigationManager.mainMenuIndex(context, 4);
+                    NavigationManager.mainMenuIndex(context, 3);
                   },
                   splashColor: Theme.of(context).primaryColor,
                   borderRadius: BorderRadius.circular(15),
                   child: Container(
                       padding: const EdgeInsets.all(25),
                       child: Text(
-                        'DB Update',
+                        'Database Update',
                         style: Theme.of(context).textTheme.headline6,
                       ),
                       decoration: BoxDecoration(

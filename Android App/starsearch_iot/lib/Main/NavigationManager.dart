@@ -5,30 +5,29 @@ import '../DB Update/AdminSite.dart';
 import './MainScreen.dart';
 import './side_panel/AboutUs.dart';
 import './side_panel/ExitApp.dart';
-import '../Local ML/LocalMain.dart';
-import '../Remote ML/RemoteNoImage.dart';
+import '../CommonML/NoImage.dart';
 
 class NavigationManager {
   static void drawerPageIndex(BuildContext context, int curPage) {
-    if (curPage >= 1 && curPage <= 4) {
+    if (curPage >= 1 && curPage <= 3) {
       allNavigation(context, curPage);
-    } else if (curPage == 5) {
+    } else if (curPage == 4) {
       exitApp(context);
-    } else if (curPage == 6) {
+    } else if (curPage == 5) {
       aboutUs(context);
     }
   }
 
   static void mainMenuIndex(BuildContext context, int curPage) {
-    if (curPage >= 1 && curPage <= 4) {
+    if (curPage >= 1 && curPage <= 3) {
       allNavigation(context, curPage);
     }
   }
 
   static void tabIndex(BuildContext context, int curPage) {
-    if (curPage >= 1 && curPage <= 4) {
+    if (curPage >= 1 && curPage <= 3) {
       allNavigation(context, curPage);
-    } else if (curPage == 5) {
+    } else if (curPage == 4) {
       exitApp(context);
     }
   }
@@ -37,15 +36,17 @@ class NavigationManager {
     if (curPage == 1) {
       Navigator.of(context).pushReplacementNamed(MainScreenMenu.routeName);
     } else if (curPage == 2) {
-      Navigator.of(context).pushReplacementNamed(LocalML.routeName);
-    } else if (curPage == 3) {
       Navigator.of(context).pushReplacementNamed(RemoteML.routeName);
-    } else if (curPage == 4) {
+    } else if (curPage == 3) {
       Navigator.of(context).pushReplacementNamed(DBUpdate.routeName);
     }
   }
 
-  static void remoteImageError(BuildContext context) {
+  static void noImgError(BuildContext context) {
     noImageError(context);
+  }
+
+  static void predictionResult(BuildContext context) {
+    predictionResult(context);
   }
 }
