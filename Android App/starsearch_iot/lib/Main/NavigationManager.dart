@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../Remote ML/RemoteMain.dart';
-import '../DB Update/AdminSite.dart';
 
 import './MainScreen.dart';
 import './side_panel/AboutUs.dart';
@@ -9,36 +7,32 @@ import '../CommonML/NoImage.dart';
 
 class NavigationManager {
   static void drawerPageIndex(BuildContext context, int curPage) {
-    if (curPage >= 1 && curPage <= 3) {
+    if (curPage == 1) {
       allNavigation(context, curPage);
-    } else if (curPage == 4) {
+    } else if (curPage == 2) {
       exitApp(context);
-    } else if (curPage == 5) {
+    } else if (curPage == 3) {
       aboutUs(context);
     }
   }
 
   static void mainMenuIndex(BuildContext context, int curPage) {
-    if (curPage >= 1 && curPage <= 3) {
+    if (curPage == 1) {
       allNavigation(context, curPage);
     }
   }
 
   static void tabIndex(BuildContext context, int curPage) {
-    if (curPage >= 1 && curPage <= 3) {
+    if (curPage == 1) {
       allNavigation(context, curPage);
-    } else if (curPage == 4) {
+    } else if (curPage == 2) {
       exitApp(context);
     }
   }
 
   static void allNavigation(BuildContext context, int curPage) {
     if (curPage == 1) {
-      Navigator.of(context).pushReplacementNamed(MainScreenMenu.routeName);
-    } else if (curPage == 2) {
       Navigator.of(context).pushReplacementNamed(RemoteML.routeName);
-    } else if (curPage == 3) {
-      Navigator.of(context).pushReplacementNamed(DBUpdate.routeName);
     }
   }
 

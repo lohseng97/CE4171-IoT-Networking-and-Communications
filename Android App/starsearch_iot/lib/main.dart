@@ -1,10 +1,5 @@
-//To run with flutter run --no-sound-null-safety
-
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import '../Remote ML/RemoteMain.dart';
-import '../DB Update/AdminSite.dart';
-
 import './Main/MainScreen.dart';
 
 void main() {
@@ -38,8 +33,6 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/root',
       routes: {
-        MainScreenMenu.routeName: (context) => MainScreenMenu(),
-        DBUpdate.routeName: (context) => DBUpdate(),
         RemoteML.routeName: (context) => RemoteML(),
       },
     );

@@ -24,21 +24,8 @@ class MainDrawer extends StatelessWidget {
           ),
           SizedBox(height: 20),
           ListTile(
-            leading: Icon(Icons.home_filled, color: Colors.white54, size: 22),
-            title: Text(
-              'Home Page',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontFamily: 'RobotoCondensed',
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold),
-            ),
-            onTap: () {
-              NavigationManager.drawerPageIndex(context, 1);
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.settings_remote, color: Colors.white, size: 22),
+            leading:
+                Icon(Icons.settings_remote, color: Colors.white54, size: 22),
             title: Text(
               'Remote ML',
               style: TextStyle(
@@ -48,21 +35,7 @@ class MainDrawer extends StatelessWidget {
                   fontWeight: FontWeight.bold),
             ),
             onTap: () {
-              NavigationManager.drawerPageIndex(context, 2);
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.warning, color: Colors.red, size: 22),
-            title: Text(
-              'Admin Portal',
-              style: TextStyle(
-                color: Colors.white,
-                fontFamily: 'RobotoCondensed',
-                fontSize: 16,
-              ),
-            ),
-            onTap: () {
-              NavigationManager.drawerPageIndex(context, 3);
+              NavigationManager.drawerPageIndex(context, 1);
             },
           ),
           ListTile(
@@ -77,7 +50,7 @@ class MainDrawer extends StatelessWidget {
               ),
             ),
             onTap: () {
-              NavigationManager.drawerPageIndex(context, 4);
+              NavigationManager.drawerPageIndex(context, 2);
             },
           ),
           ListTile(
@@ -91,7 +64,7 @@ class MainDrawer extends StatelessWidget {
                     fontSize: 16),
               ),
               onTap: () {
-                NavigationManager.drawerPageIndex(context, 5);
+                NavigationManager.drawerPageIndex(context, 3);
               }),
         ],
       ),

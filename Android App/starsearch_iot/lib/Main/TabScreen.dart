@@ -29,22 +29,12 @@ class TabScreen extends StatelessWidget {
       type: BottomNavigationBarType.shifting,
       items: [
         BottomNavigationBarItem(
-          backgroundColor: Theme.of(context).primaryColor,
-          icon: Icon(Icons.home),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          backgroundColor: Colors.green,
+          backgroundColor: Colors.orange,
           icon: Icon(Icons.settings_remote),
           label: 'Remote ML',
         ),
         BottomNavigationBarItem(
           backgroundColor: Colors.red,
-          icon: Icon(Icons.warning),
-          label: 'Admin Access',
-        ),
-        BottomNavigationBarItem(
-          //backgroundColor: Colors.red,
           icon: Icon(Icons.exit_to_app_sharp),
           label: 'Exit',
         ),
