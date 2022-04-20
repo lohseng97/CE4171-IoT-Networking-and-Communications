@@ -1,0 +1,6 @@
+framework module starflut {
+  umbrella header "starflut-umbrella.h"
+
+  export *
+  module * { export * }
+}

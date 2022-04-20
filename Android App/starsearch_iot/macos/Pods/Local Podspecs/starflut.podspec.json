@@ -1,0 +1,40 @@
+{
+  "name": "starflut",
+  "version": "1.0.0",
+  "summary": "bridge for flutter interact with other programming languages",
+  "description": "bridge for flutter interact with other programming languages, such as c/c++ lua, python, ruby, golang, rust, etc.",
+  "homepage": "http://www.srplab.com",
+  "license": {
+    "file": "../LICENSE"
+  },
+  "authors": {
+    "srplab": "srplab.cn@hotmail.com"
+  },
+  "source": {
+    "path": "."
+  },
+  "source_files": "Classes/**/*",
+  "public_header_files": "Classes/**/*.{h}",
+  "dependencies": {
+    "FlutterMacOS": [
+
+    ]
+  },
+  "resources": [
+    "starcore/*"
+  ],
+  "libraries": "starlib",
+  "compiler_flags": "-DENV_MACOS -DENV_M64",
+  "xcconfig": {
+    "HEADER_SEARCH_PATHS": "/Users/lohseng97/Documents/GitHub/CE4171/Android App/starsearch_iot/macos/Flutter/ephemeral/.symlinks/plugins/starflut/macos/include/starcore",
+    "LIBRARY_SEARCH_PATHS": "/Users/lohseng97/Documents/GitHub/CE4171/Android App/starsearch_iot/macos/Flutter/ephemeral/.symlinks/plugins/starflut/macos"
+  },
+  "platforms": {
+    "osx": "10.11"
+  },
+  "pod_target_xcconfig": {
+    "DEFINES_MODULE": "YES"
+  },
+  "swift_versions": "5.0",
+  "swift_version": "5.0"
+}
