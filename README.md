@@ -21,6 +21,7 @@ In this submission folder, the following files are available:
     - ``AndroidManifest.xml``: File required for permission controls in Android.
         - To be stored in "/android/app/build/src/main" folder
     - ``/lib``: Folder containing all the dart files to build the Flutter application
+    - ``README.md``: File containing the instruction for installation of the Flutter application
 - ``/Server Code``: Folder containing the source code to be implemented in the Virtual Machine
     - ``app.py``: Code used to run the Flask Application. TensorFlow Lite is imported in this application as well.
     - ``/model/imagereg.tflite``: TensorFlow Lite Model used for inference. Exported from the Image_Recognition.ipynb file.
