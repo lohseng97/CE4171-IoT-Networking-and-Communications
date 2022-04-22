@@ -34,8 +34,16 @@ In this submission folder, the following files are available:
 Available for reference (until 31 October 2022):
 - Presentation Video:
     - Video title: StarSearch - Application Demonstration
-    - Video link: https://www.youtube.com/watch?v=nJmaZFWRzYg&ab_channel=LohSeng
+    - Video link: [YouTube](https://www.youtube.com/watch?v=nJmaZFWRzYg&ab_channel=LohSeng)
 - OneDrive for Business:
     - Includes Original PowerPoint Slides, Presentation Video, and StarSearch Application ("app-debug.apk" file)
     - Folder Name: CE4171 IoT Communications and Networking Submission
-    - OneDrive Link (Requires NTU Account): https://entuedu-my.sharepoint.com/:f:/g/personal/chew0398_e_ntu_edu_sg/Emj_zpfwwIFIsV6FvPUWy74BKpbeoxSAMifYQp7lwmaxlw?e=xPXewR
+    - OneDrive Link (Requires NTU Account): [OneDrive](https://entuedu-my.sharepoint.com/:f:/g/personal/chew0398_e_ntu_edu_sg/Emj_zpfwwIFIsV6FvPUWy74BKpbeoxSAMifYQp7lwmaxlw?e=xPXewR)
+
+### Running the Project
+#### For Server
+
+
+### For Client
+- Download and install the "app-debug.apk" file.
+> Link in "Additional Materials" section.
