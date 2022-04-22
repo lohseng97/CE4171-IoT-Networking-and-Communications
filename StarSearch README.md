@@ -31,10 +31,10 @@ In this submission folder, the following files are available:
 ### Additional Materials
 Available for reference (until 31 October 2022):
 - Presentation Video:
-    - Video title: StarSearch - Application Demonstration
-    - Video link: [YouTube](https://www.youtube.com/watch?v=nJmaZFWRzYg&ab_channel=LohSeng)
+    - Video Title: StarSearch - Application Demonstration
+    - Video Link: [YouTube](https://www.youtube.com/watch?v=nJmaZFWRzYg&ab_channel=LohSeng)
 - OneDrive for Business:
-    - Includes the following:
+    - Includes the following files:
         - PowerPoint Slides
         - Presentation Video
         - TensorFlow Model
