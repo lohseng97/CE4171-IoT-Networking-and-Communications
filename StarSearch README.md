@@ -53,6 +53,6 @@ $ python3 app.py
 - Download and install the "app-debug.apk" file.
 > Link in [Additional Materials](#additional-materials) section.
 > 
-> Note: The application will only work when [StarSearch Server](http://starsearch.lohseng.tech:8080) is operational.
+> Note: The application will only work when the [StarSearch Server](http://starsearch.lohseng.tech:8080) is operational.
 > 
 > As such, using the source code is required to replicate the project, replacing the URI with the IP address allocated by your service provider.
