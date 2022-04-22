@@ -16,16 +16,16 @@ In this submission folder, the following files are available:
         - Training Accuracy: 91.55%
         - Validation Loss: 0.5997
         - Validation Accuracy: 81.16%
-- /Android App Code/starsearch_iot: Folder containing the source code for the Flutter Application
-    - pubspec.yaml: File used to import modules in the Flutter Application.
-    - AndroidManifest.xml: File required for permission controls in Android.
+- ``/Android App Code/starsearch_iot``: Folder containing the source code for the Flutter Application
+    - ``pubspec.yaml``: File used to import modules in the Flutter Application.
+    - ``AndroidManifest.xml``: File required for permission controls in Android.
         - To be stored in "/android/app/build/src/main" folder
-    - /lib: Folder containing all the dart files to build the Flutter application
-- /Server Code: Folder containing the source code to be implemented in the Virtual Machine
-    - app.py: Code used to run the Flask Application. TensorFlow Lite is imported in this application as well.
-    - /model/imagereg.tflite: TensorFlow Lite Model used for inference. Exported from the Image_Recognition.ipynb file.
-    - /templates/index.html: HTML file to allow users to upload the image to the server through the web browser
-    - requirements.txt: Text file containing the list of dependencies for the server application.
+    - ``/lib``: Folder containing all the dart files to build the Flutter application
+- ``/Server Code``: Folder containing the source code to be implemented in the Virtual Machine
+    - ``app.py``: Code used to run the Flask Application. TensorFlow Lite is imported in this application as well.
+    - ``/model/imagereg.tflite``: TensorFlow Lite Model used for inference. Exported from the Image_Recognition.ipynb file.
+    - ``/templates/index.html``: HTML file to allow users to upload the image to the server through the web browser
+    - ``requirements.txt``: Text file containing the list of dependencies for the server application.
 - StarSearch README.md: Readme file.
 
 ### Additional Materials
