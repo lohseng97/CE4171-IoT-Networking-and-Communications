@@ -10,10 +10,13 @@ The objective of the project is to:
 
 ## Contents
 ### Client - in "Android App" folder
-
+Contains the files required for the StarSearch Android Application
+> Note: While iOS, macOS and Web files exist in the folder, the application was tested only on Android.
 
 ### Server - in "Server" folder
-
+Contains the files required for the StarSearch Server Application
+> Note: Read the requirements.txt and install the relevant dependencies in the server.
 
 ### Model Training - in "Model" folder
-
+Contains the Google Colab file used for training.
+> Source of dataset: Animals-10 dataset. [Link](https://www.kaggle.com/datasets/alessiocorrado99/)
