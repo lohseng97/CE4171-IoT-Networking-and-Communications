@@ -20,5 +20,3 @@ Contains the files required for the StarSearch Server Application
 ### Model Training - in "Model" folder
 Contains the Google Colab file used for training.
 > Source of dataset: Animals-10 dataset. [Link](https://www.kaggle.com/datasets/alessiocorrado99/)
-
-#
