@@ -10,7 +10,7 @@ The objective of the project is to:
 ### Contents
 In this submission folder, the following files are available:
 - Image_Recognition.ipynb: Google Colab Notebook used for training.
-    - Dataset used: Animals-10 dataset. Source: https://www.kaggle.com/datasets/alessiocorrado99/animals10
+    - Dataset used: Animals-10 dataset. Source: [Dataset](https://www.kaggle.com/datasets/alessiocorrado99/animals10)
     - Statistics: 
         - Training Loss: 0.2541
         - Training Accuracy: 91.55%
