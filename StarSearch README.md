@@ -9,7 +9,7 @@ The objective of the project is to:
 
 ### Contents
 In this submission folder, the following files are available:
-- Image_Recognition.ipynb: Google Colab Notebook used for training.
+- ``Image_Recognition.ipynb``: Google Colab Notebook used for training.
     - Dataset used: Animals-10 dataset. Source: [Dataset](https://www.kaggle.com/datasets/alessiocorrado99/animals10)
     - Statistics: 
         - Training Loss: 0.2541
@@ -26,7 +26,7 @@ In this submission folder, the following files are available:
     - ``/model/imagereg.tflite``: TensorFlow Lite Model used for inference. Exported from the Image_Recognition.ipynb file.
     - ``/templates/index.html``: HTML file to allow users to upload the image to the server through the web browser
     - ``requirements.txt``: Text file containing the list of dependencies for the server application.
-- StarSearch README.md: Readme file.
+- ``StarSearch README.md``: Readme file.
 
 ### Additional Materials
 Available for reference (until 31 October 2022):
