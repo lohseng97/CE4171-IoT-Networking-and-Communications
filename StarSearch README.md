@@ -16,8 +16,6 @@ In this submission folder, the following files are available:
         - Training Accuracy: 91.55%
         - Validation Loss: 0.5997
         - Validation Accuracy: 81.16%
-- image_org.zip: Zipped file containing the TensorFlow Model file.
-    - Note: TensorFlow Lite Model (uploaded to GCP) is in "/Server Code/Model"
 - /Android App Code/starsearch_iot: Folder containing the source code for the Flutter Application
     - pubspec.yaml: File used to import modules in the Flutter Application.
     - AndroidManifest.xml: File required for permission controls in Android.
@@ -36,7 +34,7 @@ Available for reference (until 31 October 2022):
     - Video title: StarSearch - Application Demonstration
     - Video link: [YouTube](https://www.youtube.com/watch?v=nJmaZFWRzYg&ab_channel=LohSeng)
 - OneDrive for Business:
-    - Includes Original PowerPoint Slides, Presentation Video, and StarSearch Application ("app-debug.apk" file)
+    - Includes Original PowerPoint Slides, Presentation Video, TensorFlow Model ("image_org.zip"), and StarSearch Application ("app-debug.apk" file)
     - Folder Name: CE4171 IoT Communications and Networking Submission
     - OneDrive Link (Requires NTU Account): [OneDrive](https://entuedu-my.sharepoint.com/:f:/g/personal/chew0398_e_ntu_edu_sg/Emj_zpfwwIFIsV6FvPUWy74BKpbeoxSAMifYQp7lwmaxlw?e=xPXewR)
 
