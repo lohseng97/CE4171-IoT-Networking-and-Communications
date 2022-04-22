@@ -34,7 +34,11 @@ Available for reference (until 31 October 2022):
     - Video title: StarSearch - Application Demonstration
     - Video link: [YouTube](https://www.youtube.com/watch?v=nJmaZFWRzYg&ab_channel=LohSeng)
 - OneDrive for Business:
-    - Includes Original PowerPoint Slides, Presentation Video, TensorFlow Model ("image_org.zip"), and StarSearch Application ("app-debug.apk" file)
+    - Includes the following:
+        - PowerPoint Slides
+        - Presentation Video
+        - TensorFlow Model
+        - StarSearch Application
     - Folder Name: CE4171 IoT Communications and Networking Submission
     - OneDrive Link (Requires NTU Account): [OneDrive](https://entuedu-my.sharepoint.com/:f:/g/personal/chew0398_e_ntu_edu_sg/Emj_zpfwwIFIsV6FvPUWy74BKpbeoxSAMifYQp7lwmaxlw?e=xPXewR)
 
