@@ -42,8 +42,17 @@ Available for reference (until 31 October 2022):
 
 ### Running the Project
 #### For Server
+- Run the Flask server in the root folder by executing the command:
+```
+$ python3 app.py
+```
+- Record the IP address and port allocated by the Flask server. It will be used for connection to the client.
+> Note: Firewall permissions and port forwarding must be allowed for incoming connections. Otherwise, the client cannot connect even with the correct settings.
 
-
-### For Client
+### For Client (Demonstration Only)
 - Download and install the "app-debug.apk" file.
-> Link in "Additional Materials" section.
+> Link in [Additional Materials](#additional-materials) section.
+> 
+> Note: The application will only work when [StarSearch Server](http://starsearch.lohseng.tech:8080) is operational.
+> 
+> As such, using the source code is required to replicate the project, replacing the URI with the IP address allocated by your service provider.
