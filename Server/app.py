@@ -61,7 +61,7 @@ def upload():
 	[accuracy, animal] = uploadHandler(imagefile)
 	accuracy = str(accuracy)
 	accuracy = "{:.2f}".format(float(accuracy)) + '%'
-	print("Received imag and sending back predicted results.")
+	print("Received image and sending back predicted results.")
 	return jsonify({
 		"message": "Success!",
 		"filename": imagefile.filename,
