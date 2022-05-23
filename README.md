@@ -57,6 +57,10 @@ $ python3 app.py
 > Link in [Additional Materials](#additional-materials) section.
 > 
 > Note: The application will only work when the [StarSearch Server](http://starsearch.lohseng.tech:8080) is operational.
-> As such, using the source code is required to replicate the project, replacing the URI with the IP address allocated by your service provider.
 >
 > Additionally, while iOS, macOS and Web files exist in the folder, the application was tested only on Android.
+
+- Alternatively, follow the ``README.md`` in ``/Android App Code/starsearch_iot`` to install into your device.
+> Note: Please replace the [StarSearch URI](http://starsearch.lohseng.tech:8080) with the IP address allocated by your service provider.
+>
+> Modify the ``MainScreen.dart`` in ``/Android App Code/starsearch_iot/lib/Main``.
