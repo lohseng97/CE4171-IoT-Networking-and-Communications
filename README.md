@@ -7,6 +7,9 @@ The objective of the project is to:
 - Host a Virtual Machine with convolutional neural network capability to do animal detection
 - Create Android application ("StarSearch") to communicate with the Virtual Machine
 
+### Demonstration Video
+[![StarSearch](http://img.youtube.com/vi/nJmaZFWRzYg/0.jpg)](https://youtu.be/nJmaZFWRzYg)
+
 ### Contents
 In this submission folder, the following files are available:
 - ``Image_Recognition.ipynb``: Google Colab Notebook used for training.
@@ -31,9 +34,6 @@ In this submission folder, the following files are available:
 
 ### Additional Materials
 Available for reference (until 31 October 2022):
-- Presentation Video:
-    - Video Title: StarSearch - Application Demonstration
-    - Video Link: [YouTube](https://www.youtube.com/watch?v=nJmaZFWRzYg&ab_channel=LohSeng)
 - OneDrive for Business:
     - Includes the following files:
         - PowerPoint Slides
