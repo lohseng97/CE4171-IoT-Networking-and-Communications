@@ -1,6 +1,24 @@
 # NTU CE/CZ4171 Internet of Things: Communications and Networking
 
-## StarSearch - Flutter Application for Animals Detection
+## Part 1: Term Paper - Low Power Wide-Area Network
+
+### Term Paper Description
+The objective of the term paper is to:
+- Conduct a literature review from a range of pre-selected topics
+- To write a 4500 word survey paper to summarize the related research works
+
+### Assessment Criteria
+The term paper should fulfill the following criteria:
+- Topic selected: To be significant, timely and impactful
+- Content of the paper: Scope to be well defined, and contents should be comprehensive in terms of broadness and depth
+- Analytical and critical information: Paper to provide insightful analysis
+- Presentation: Paper should be clear and logically organized, while easy to understand
+
+### Contents
+In this submission folder, the following files are available:
+- ``Term Paper - LPWAN.pdf``: Submitted Term Paper based on the current Low-Power Wide Area Network technologies.
+
+## Part 2: StarSearch - Flutter Application for Animals Detection
 
 ### Project Description
 The objective of the project is to:
